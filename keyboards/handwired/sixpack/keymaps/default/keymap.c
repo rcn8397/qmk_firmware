@@ -9,14 +9,25 @@ enum layer_names {
     _FN
 };
 
+/*
+Key Codes:
+https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md
+
+TLDR;
+_______ : Transparent
+XXXXXXX : No operation (No Op)
+RESET   : Reset into bootloader
+KC_LCMD : Left GUI (Windows/Command/Meta Key)
+
+ */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Base */
     [_BASE] = LAYOUT(
-        KC_A,    KC_1,    MO(_FN),
-            KC_TAB,   KC_SPC
+        KC_Q,    KC_W, MO(_FN),
+        KC_A,    KC_S, KC_D
     ),
     [_FN] = LAYOUT(
-        _______, _______,  _______,
-            RESET,    XXXXXXX
+        KC_PGUP,  KC_PGDN,   _______,
+        RESET,    KC_LCMD,   XXXXXXX
     )
 };
